@@ -94,6 +94,11 @@ app.get('/api/shows/:id', function(req, res, next) {
 	});
 });
 
+app.use(function(err, req, res, next) {
+	console.error(err.stack);
+	res.send( 500, { message : err.message });
+});
+
 
 app.listen( app.get('port'), function() {
     console.log ('Express server listening on port' + app.get('port'));
