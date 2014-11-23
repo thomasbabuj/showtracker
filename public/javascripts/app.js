@@ -1,6 +1,6 @@
 angular
 	.module('MyApp', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
-	.config( [$locationProvider, $routeProvider, function($locationProvider, $routeProvider) {		
+	.config( [ '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {		
 		
 		// Enable HTML5 pushState
 		$locationProvider.html5Mode(true);
