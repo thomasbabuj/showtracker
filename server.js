@@ -94,6 +94,12 @@ app.get('/api/shows/:id', function(req, res, next) {
 	});
 });
 
+// fix for "Cannot GET/add error" 
+// implemnted redirect route
+app.get('*', function(req, res) {
+	res.redirect('/#' + req.originalUrl);
+});
+
 app.use(function(err, req, res, next) {
 	console.error(err.stack);
 	res.send( 500, { message : err.message });
