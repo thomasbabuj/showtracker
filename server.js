@@ -60,6 +60,8 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 var User = mongoose.model('User', userSchema);
 var Show = mongoose.model('Show', showSchema);
 
+mongoose.connect('localhost');
+
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
