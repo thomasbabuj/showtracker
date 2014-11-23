@@ -4,8 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mangoose');
-var bcrypt = require('bcrypt');
+var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
 
 var showSchema = new mongoose.Schema({
 	_id : Number,
@@ -32,10 +32,10 @@ var showSchema = new mongoose.Schema({
 	}]
 });
 
-var userSchema = new mongoose.Schema ([
+var userSchema = new mongoose.Schema ({
 	email : { type : String, unique : true },
 	password : String
-]);
+});
 
 userSchema.pre('save', function(next) {
 	var user = this;
@@ -64,7 +64,7 @@ mongoose.connect('localhost');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
