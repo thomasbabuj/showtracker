@@ -69,7 +69,7 @@ mongoose.connect('localhost');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3002);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());

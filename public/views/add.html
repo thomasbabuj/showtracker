@@ -3,7 +3,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">Add TV Show</div>
 		<div class="panel-body">
-			<form class="form" method="post" ng-submit="addShow()" name="addForm">
+			<form method="post" ng-submit="addShow()" name="addForm" class="form-inline">
 				<div class="form-group" ng-class="{ 'has-success' : addForm.showName.$valid && addForm.showName.$dirty, 
 				'has-error' : addForm.showName.$invalid && addForm.showName.$dirty }">
 					<input class="form-control" type="text" name="showName" ng-model="showName" placeholder="Enter TV show name"
